@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_twodim_array.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skesuma <skesuma@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 16:12:32 by skesuma           #+#    #+#             */
-/*   Updated: 2022/01/25 22:01:05 by skesuma          ###   ########.fr       */
+/*   Created: 2022/01/25 22:07:36 by skesuma           #+#    #+#             */
+/*   Updated: 2022/01/25 22:25:04 by skesuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define FILLIT_H
-# define BUFF_SIZE 8
+#include "libft.h"
 
-# include <stdlib.h>
-# include <stdio.h> //remove later?
-# include <fcntl.h>
-# include "libft/libft.h"
-
-int	get_next_line(const int fd, char **line);
-
-typedef struct	s_etris
+char	**twodim_array(int size, char **ptr)
 {
-	char		**pos;
+	int	y;
 
-}				t_etris;
-
-#endif
+	y = 0;
+	ptr = (char **)malloc(sizeof(ptr) * (size + 1));
+	while (y < size)
+	{
+		ptr[y] = (char *)malloc(sizeof(char) * (size + 1));
+		ptr[y++][size] = '\0';
+	}
+	return(ptr);
+}

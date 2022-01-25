@@ -6,7 +6,7 @@
 /*   By: skesuma <skesuma@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 13:38:50 by skesuma           #+#    #+#             */
-/*   Updated: 2022/01/03 14:48:45 by skesuma          ###   ########.fr       */
+/*   Updated: 2022/01/25 22:25:33 by skesuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+char	**twodim_array(int size, char **ptr);
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 t_list	*ft_lstnew(void const *content, size_t content_size);
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
