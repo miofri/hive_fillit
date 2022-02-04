@@ -6,13 +6,13 @@
 /*   By: skesuma <skesuma@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:12:32 by skesuma           #+#    #+#             */
-/*   Updated: 2022/01/25 22:01:05 by skesuma          ###   ########.fr       */
+/*   Updated: 2022/02/03 18:20:39 by skesuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
-# define BUFF_SIZE 8
+# define BUFF_SIZE 21
 
 # include <stdlib.h>
 # include <stdio.h> //remove later?
