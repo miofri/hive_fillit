@@ -6,7 +6,7 @@
 /*   By: skesuma <skesuma@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:12:32 by skesuma           #+#    #+#             */
-/*   Updated: 2022/02/03 18:20:39 by skesuma          ###   ########.fr       */
+/*   Updated: 2022/02/21 11:56:56 by skesuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,17 @@
 
 int	get_next_line(const int fd, char **line);
 
-typedef struct	s_etris
+typedef struct s_coord
 {
-	char		**pos;
+	size_t	x;
+	size_t	y;
+	char	letter;
+}			t_coord;
 
-}				t_etris;
+typedef struct s_etris
+{
+	t_coord	**pos;
+	size_t	nblock;
+}			t_etris;
 
 #endif

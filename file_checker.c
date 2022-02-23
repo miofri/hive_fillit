@@ -6,7 +6,7 @@
 /*   By: skesuma <skesuma@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:36:00 by skesuma           #+#    #+#             */
-/*   Updated: 2022/02/07 17:36:08 by skesuma          ###   ########.fr       */
+/*   Updated: 2022/02/21 12:12:01 by skesuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,9 +110,7 @@ int	block_checker(int i, char *buf, int fd, int ret)
 		if (buf[y] == '#')
 			x++;
 		if ((y + 1) % 21 == 0 && x != 4)
-		{
 			return (-1);
-		}
 		else if ((y + 1) % 21 == 0 && x == 4)
 			x = 0;
 		y++;
@@ -124,6 +122,7 @@ int	block_checker(int i, char *buf, int fd, int ret)
 		buf[21] = '\0';
 		ret = touching(i, buf, x, y);
 	}
+	close(fd);
 	return (ret);
 }
 
@@ -145,17 +144,9 @@ int	lets_check(char *argv[])
 	ret = 0;
 	fd = open(argv[1], O_RDONLY);
 	check = block_checker(check, buf, fd, ret);
+	close(fd);
 	if (check == -1)
 		return (-1);
-	return (0);
-}
-
-int	main(int argc, char *argv[])
-{
-	if (argc != 2)
-		return (write(1, "Usage: ./fillit input_file\n", 27));
-	if (lets_check(argv) != 0)
-		return (printf("invalid file\n"));
 	else
-		return (printf("valid file\n"));
+		return (0);
 }
