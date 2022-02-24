@@ -6,7 +6,7 @@
 /*   By: skesuma <skesuma@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 11:39:58 by skesuma           #+#    #+#             */
-/*   Updated: 2022/02/23 19:27:16 by skesuma          ###   ########.fr       */
+/*   Updated: 2022/02/24 22:25:30 by skesuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	take_coor(int fd, char *buf, t_etris *block)
 		}
 		o++;
 	}
+	close(fd);
 }
 
 int	parse(char *argv[])
