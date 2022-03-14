@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skesuma <skesuma@student.42.fr>            +#+  +:+       +#+        */
+/*   By: skesuma <skesuma@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 17:26:31 by skesuma           #+#    #+#             */
-/*   Updated: 2021/12/15 15:16:16 by skesuma          ###   ########.fr       */
+/*   Updated: 2022/03/13 16:44:56 by skesuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ char	*ft_strnew(size_t size)
 {
 	char	*ptr;
 
-	ptr = (char *)ft_memalloc(size + 1);
+	ptr = (char *)ft_memalloc(sizeof(ptr) * (size + 1));
+	ptr[size] = '\0';
 	return (ptr);
 }
 
